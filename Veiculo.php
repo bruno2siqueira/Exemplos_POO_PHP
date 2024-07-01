@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html>
-
 <body>
-
     <?php
     class Veiculo{
-        //atributos
+        // atributos da classe Veiculo
         public $tipo;
         public $marca;
         public $qtd_rodas;
-        //metodos
-        public function andar(){
-            echo "Veiculo Andando...";
+        // metodos da classe Veiculo
+        public function __construct(){
+            echo "EU SOU UM VEICULO<br>";
         }
-        public function ligar()
-        {
-            echo "Veiculo ligado!";
+        public function Andar(){
+            echo "Veiculo Andando...<br>";
+        }
+        public function Ligar()
+        {s
+            echo "Veiculo Ligado!<br>";
         }
     }
-
     class Carro extends Veiculo{
-        public function __construct($marca, $tipo, $qtd_rodas){
-            echo $this->marca = $marca;
+        //metodo contrutor
+        public function __construct($tipo, $marca, $qtd_rodas){
             echo $this->tipo = $tipo;
-            echo $this->marca = $qtd_rodas;
+            echo $this->marca = $marca;
+            echo $this->qtd_rodas = $qtd_rodas;
         }
     }
+    //Crindo um objeto do tipo Veiculo
+    $v8 = new Veiculo();
+    $v8->Ligar();
+    $v8->Andar();
 
-    $fusca = new Carro("Fusca", "VW", "4*");
-    $fusca->andar();
-
-
+    //criando um objeto do tipo Carro, filha do Veiculo
+    $fusca = new Carro("Fusca", "VW", "4");
 
 
     ?>
